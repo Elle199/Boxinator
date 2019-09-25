@@ -27,7 +27,7 @@ public class DatabaseLoader implements CommandLineRunner {
     //Fills the database with a new box
 	@Override
 	public void run(String... strings) throws Exception {
-		this.boxRepository.save(new Box("Max", 5, "(255, 0, 255)", "Mexico"));
-		this.boxRepository.save(new Box("Fanny", 10, "(155, 20, 255)", "Stockholm"));
+		this.boxRepository.save(new Box("Max", 5, "(255, 0, 255)", "Mexico", "2000"));
+		this.boxRepository.save(new Box("Fanny", 10, "(155, 20, 255)", "Stockholm", "500"));
 	}
 }

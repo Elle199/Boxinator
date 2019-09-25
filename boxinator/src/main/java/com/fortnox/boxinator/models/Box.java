@@ -21,16 +21,18 @@ public class Box {
     private @NonNull int weight;
     private @NonNull String color;
     private @NonNull String destination;
+    private @NonNull String shippingCost;
 
     //Default constructor
     public Box() {}
 
     //Constructor with all values as parameters
-    public Box(String receiverName, int weight, String color, String destination) {
+    public Box(String receiverName, int weight, String color, String destination, String shippingCost) {
         this.receiverName = receiverName;
         this.weight = weight;
         this.color = color;
         this. destination = destination;
+        this.shippingCost = shippingCost + " SEK";
     }
 
     // Getters and Setters
@@ -68,6 +70,12 @@ public class Box {
     public void setDestination(String destination) {
         this.destination = destination;
     }
+    public String getShippingCost() {
+        return shippingCost;
+    }
+    public void setShippingCost(String shippingCost) {
+        this.shippingCost = shippingCost;
+    }
 
     @Override
     public boolean equals(Object other) {
@@ -79,12 +87,13 @@ public class Box {
         Objects.equals(receiverName, box.receiverName) &&
         Objects.equals(weight, box.weight) &&
         Objects.equals(color, box.color) &&
-        Objects.equals(destination, box.destination);
+        Objects.equals(destination, box.destination) &&
+        Objects.equals(shippingCost, box.shippingCost);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, receiverName, weight, color, destination);
+        return Objects.hash(id, receiverName, weight, color, destination, shippingCost);
     }
 
     @Override
@@ -94,6 +103,7 @@ public class Box {
         ", receiverName=" + receiverName +
         ", weight=" + weight +
         ", color=" + color + 
-        "destination=" + destination + "}";
+        ", destination=" + destination + 
+        ", shippingCost=" + shippingCost + "}";
     }
 }

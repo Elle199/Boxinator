@@ -34,10 +34,11 @@ class BoxList extends React.Component{
 			<table>
 				<tbody>
 					<tr>
-						<th>Receiver Name</th>
+						<th>Receiver</th>
 						<th>Weight</th>
 						<th>Color</th>
 						<th>Destination</th>
+						<th>Shipping cost</th>
 					</tr>
 					{boxes}
 				</tbody>
@@ -54,6 +55,7 @@ class Box extends React.Component{
 				<td>{this.props.box.weight}</td>
 				<td>{this.props.box.color}</td>
 				<td>{this.props.box.destination}</td>
+				<td>{this.props.box.shippingCost}</td>
 			</tr>
 		)
 	}
