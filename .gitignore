@@ -1,0 +1,14 @@
+# Visual Studio Code exclusions
+**.code-workspace
+**/.settings
+.project
+.classpath
+
+# Node exclusions
+**/node_modules
+**/node
+package-lock.json
+
+# Other exclusions
+built
+target
