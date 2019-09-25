@@ -13,6 +13,7 @@ class App extends React.Component {
 
 	componentDidMount() {
 		client({method: 'GET', path: '/api/boxes'}).done(response => {
+			console.log(response.entity._embedded.boxes);
 			this.setState({boxes: response.entity._embedded.boxes});
 		});
 	}
@@ -27,7 +28,7 @@ class App extends React.Component {
 class BoxList extends React.Component{
 	render() {
 		const boxes = this.props.boxes.map(box =>
-			<Box key={box._links.self.href} box={employee}/>
+			<Box key={box._links.self.href} box={box}/>
 		);
 		return (
 			<table>
@@ -52,7 +53,7 @@ class Box extends React.Component{
 				<td>{this.props.box.receiverName}</td>
 				<td>{this.props.box.weight}</td>
 				<td>{this.props.box.color}</td>
-				<td>{this.props.box.description}</td>
+				<td>{this.props.box.destination}</td>
 			</tr>
 		)
 	}
@@ -61,5 +62,5 @@ class Box extends React.Component{
 ReactDOM.render(
 	<App />,
 	document.getElementById('react')
-);
+)
 
