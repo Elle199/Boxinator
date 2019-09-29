@@ -21,18 +21,18 @@ public class Box {
     private @NonNull int weight;
     private @NonNull String color;
     private @NonNull String destination;
-    private @NonNull String shippingCost;
+    private @NonNull Long shippingCost;
 
     //Default constructor
     public Box() {}
 
     //Constructor with all values as parameters
-    public Box(String receiverName, int weight, String color, String destination, String shippingCost) {
+    public Box(String receiverName, int weight, String color, String destination, Long shippingCost) {
         this.receiverName = receiverName;
         this.weight = weight;
         this.color = color;
-        this. destination = destination;
-        this.shippingCost = shippingCost + " SEK";
+        this.destination = destination;
+        this.shippingCost = shippingCost;
     }
 
     // Getters and Setters
@@ -70,10 +70,10 @@ public class Box {
     public void setDestination(String destination) {
         this.destination = destination;
     }
-    public String getShippingCost() {
+    public Long getShippingCost() {
         return shippingCost;
     }
-    public void setShippingCost(String shippingCost) {
+    public void setShippingCost(Long shippingCost) {
         this.shippingCost = shippingCost;
     }
 
