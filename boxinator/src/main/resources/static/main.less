@@ -1,9 +1,13 @@
-//out: main.css, compress:false, sourcemap: false
+//out: main.css, compress: true, sourcemap: true
+
+@import "variables.less";
+
 html, body{
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
+    font-family: 'Poppins', sans-serif;
 }
 
 #react{
@@ -13,10 +17,196 @@ html, body{
     height: 100%;
 }
 
-input[type="color"]{
-    vertical-align: baseline;
+.navigation{
+    width: 100%;
+    padding: 0 20px;
+    width: calc(~"100% - 40px");
+    background-color: @darkgrey;
+
+    .navList{
+        display: block;
+        padding: 0;
+        margin: 0;
+
+        .navItem{
+            display: inline-block;
+            min-width: 100px;
+
+            &:nth-child(2){
+                margin-left: 35%;
+            }
+            
+            a{
+                display: block;
+                position: relative;
+                line-height: 70px;
+                font-size: 1.3em;
+                text-decoration: none;
+                text-align: center;
+                color: white;
+                padding: 0 20px;
+                transition: all 100ms ease-in-out;
+                
+                &:visited, &:active{
+                    color: white;
+                }
+
+                &:hover{
+                    background-color: @closeblack;
+                }
+                
+                &::after{
+                    content: " ";
+                    position: absolute;
+                    top: calc(~"100% - 5px");
+                    background-color: @green;
+                    left: 50%;
+                    width: 0;
+                    height: 5px;
+                    transition: all 150ms ease-out;
+                }
+
+                &.active::after{
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        }
+    }
 }
 
-.active{
-    color: red;
+.formController{
+    width: 20%;
+    display: block;
+    position: relative;
+    margin: 50px 40% 20px 40%;
+
+    label{
+        display: block;
+    }
+
+    .inputBox{
+        margin: 40px 0;
+    }
+
+    input{
+        border: none;
+        font-size: 1em;
+        padding: 10px;
+        margin: 5px 0;
+        width: calc(~"100% - 20px");
+        border-radius: 4px;
+    
+        &[type="text"]{
+            border-bottom: 2px solid @darkgrey;
+            background-color: @closewhite;
+            transition: all 150ms ease-in-out;
+
+            &:focus{
+                border-bottom: 4px solid @green;
+            }
+        }
+    
+        &[type="color"]{
+            height: 45px;
+            padding: 0;
+            background: none;
+            vertical-align: bottom;
+            width: 100%;
+
+            &:focus{
+                border: 4px solid @green;
+            }
+        }
+    
+        &[type="submit"]{
+            position: relative;
+            font-size: 1.2em;
+            font-weight: 400;
+            width: 50%;
+            left: 50%;
+            background-color: @submitBtnColor;
+
+            &:hover{
+                background-color: @green;
+            }
+
+            &:active{
+                background-color: @submitActColor;
+            }
+        }
+    }
+
+    select{
+        width: 100%;
+        border: none;
+        border-radius: 4px;
+        border-bottom: 2px solid @darkgrey;
+        background-color: @closewhite;
+        font-size: 1em;
+        padding: 10px;
+    }
+}
+
+.displayTable{
+    width: 40%;
+    margin: 50px 30% 20px 30%;
+
+    table{
+        width: 100%;
+        position: relative;
+        border-collapse: collapse;
+        padding: 0 5px;
+
+        thead{
+            background-color: @tableHeadColor;
+
+            /* Seems to not work in only FireFox */
+            th:first-of-type{
+                border-top-left-radius: 4px;
+            }
+            /* Seems to not work in only FireFox */
+            th:last-of-type{
+                border-top-right-radius: 4px;
+            }
+        }
+
+        th{
+            text-align: left;
+            color: white;
+        }
+
+        tr{
+            font-size: 1em;
+            height: 40px;
+            line-height: 40px;
+
+            th, td{
+                padding-left: 10px;
+            }
+        }
+
+        tbody{
+            tr{
+                &:nth-child(odd){
+                    background-color: @tableRowOddColor;
+                }  
+
+                &:nth-child(even){
+                    background-color: @tableRowEvenColor;
+                }
+            }
+
+            /* Seems to not work in only FireFox */
+            tr:last-of-type{
+                td:first-of-type{
+                    border-bottom-left-radius: 4px;
+                }
+
+                td:last-of-type{
+                    border-bottom-right-radius: 4px;
+                }
+            }
+        }
+    }
 }

@@ -2,7 +2,7 @@
  * @author max.angman
  */
 
- /*
+/*
 import RouteLinks from '../components/routes';
 */
 
@@ -14,24 +14,34 @@ class CreateBox extends React.Component {
     }
 
     render() {
-        console.log("Hi from addbox.js");
-        
         return (
             <div className="main">
-    
-                <form>
-                    <input type="text" ref="receiverName" />
-                    <input type="text" ref="weight" />
-                    <input type="color" ref="color" />
-                    <input type="text" list="destinations" ref="destination" />
-                    <datalist id="destinations">
-                        <option>Sweden</option>
-                        <option>China</option>
-                        <option>Brazil</option>
-                        <option>Austria</option>
-                    </datalist>
-                    <input type="submit" value="Submit" />
-                </form>
+                <div className="formController">
+                    <form>
+                        <div className="inputBox">
+                            <label htmlFor="receiverName">Reciver name</label>
+                            <input type="text" ref="receiverName" />
+                        </div>
+                        <div className="inputBox">
+                            <label htmlFor="weight">Weight</label>
+                            <input type="text" ref="weight" pattern="[0-9]+" title="Must the only whole numbers"/>
+                        </div>
+                        <div className="inputBox">
+                            <label htmlFor="color">Color</label>
+                            <input type="color" ref="color" />
+                        </div>
+                        <div className="inputBox">
+                            <label htmlFor="rdestination">Destination</label>
+                            <select ref="destination">
+                                <option>Sweden</option>
+                                <option>China</option>
+                                <option>Brazil</option>
+                                <option>Austria</option>
+                            </select>
+                        </div>
+                        <input type="submit" value="Save" />
+                    </form>
+                </div>
             </div>
         )
     }

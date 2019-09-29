@@ -21,22 +21,24 @@ class BoxList extends React.Component {
 		const boxes = this.state.boxes.map(box =>
 			<Box key={box._links.self.href} box={box} />
 		);
-		
+
 		return (
-			<table>
-				<thead>
-					<tr>
-						<th>Receiver</th>
-						<th>Weight</th>
-						<th>Color</th>
-						<th>Destination</th>
-						<th>Shipping cost</th>
-					</tr>
-				</thead>
-				<tbody>
-					{boxes}
-				</tbody>
-			</table>
+			<div className="displayTable">
+				<table>
+					<thead>
+						<tr>
+							<th>Receiver</th>
+							<th>Weight</th>
+							<th>Color</th>
+							<th>Destination</th>
+							<th>Shipping cost</th>
+						</tr>
+					</thead>
+					<tbody>
+						{boxes}
+					</tbody>
+				</table>
+			</div>
 		)
 	}
 }

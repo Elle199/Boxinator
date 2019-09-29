@@ -6,8 +6,6 @@ const React = require('react');
 
 class NotFound extends React.Component {
     render(){
-        console.log("Hi from notfound.js", this);
-        
         return(
             <div className="main">
                 <h1>Page not found</h1>

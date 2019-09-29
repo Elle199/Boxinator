@@ -11,8 +11,6 @@ const React = require('react');
 
 class RouteLinks extends React.Component {
     render() {
-        console.log("Hi from routes.js", this);
-
         return (
             <Router>
                 <div>
