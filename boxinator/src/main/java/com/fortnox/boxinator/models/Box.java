@@ -12,10 +12,10 @@ import org.springframework.lang.NonNull;
  * @author max.angman
  */
 
-//Database entity defenition
+// Database entity defenition
 @Entity
 public class Box {
-    //All variable used in the database as non-null
+    // All variable used in the database as non-null
     private @Id @GeneratedValue @NonNull Long id;
     private @NonNull String receiverName;
     private @NonNull int weight;
@@ -23,10 +23,11 @@ public class Box {
     private @NonNull String destination;
     private @NonNull Long shippingCost;
 
-    //Default constructor
-    public Box() {}
+    // Default constructor
+    public Box() {
+    }
 
-    //Constructor with all values as parameters
+    // Constructor with all values as parameters
     public Box(String receiverName, int weight, String color, String destination, Long shippingCost) {
         this.receiverName = receiverName;
         this.weight = weight;
@@ -36,9 +37,10 @@ public class Box {
     }
 
     // Getters and Setters
-    public Long getId(){
+    public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -46,6 +48,7 @@ public class Box {
     public String getReceiverName() {
         return receiverName;
     }
+
     public void setReceiverName(String receiverName) {
         this.receiverName = receiverName;
     }
@@ -53,6 +56,7 @@ public class Box {
     public int getWeight() {
         return weight;
     }
+
     public void setWeight(int weight) {
         this.weight = weight;
     }
@@ -60,6 +64,7 @@ public class Box {
     public String getColor() {
         return color;
     }
+
     public void setColor(String color) {
         this.color = color;
     }
@@ -67,28 +72,30 @@ public class Box {
     public String getDestination() {
         return destination;
     }
+
     public void setDestination(String destination) {
         this.destination = destination;
     }
+
     public Long getShippingCost() {
         return shippingCost;
     }
+
     public void setShippingCost(Long shippingCost) {
         this.shippingCost = shippingCost;
     }
 
     @Override
     public boolean equals(Object other) {
-        if(other == this) return true;
-        if(other == null || this.getClass() != other.getClass()) return false;
+        if (other == this)
+            return true;
+        if (other == null || this.getClass() != other.getClass())
+            return false;
 
         Box box = (Box) other;
-        return Objects.equals(id, box.id) &&
-        Objects.equals(receiverName, box.receiverName) &&
-        Objects.equals(weight, box.weight) &&
-        Objects.equals(color, box.color) &&
-        Objects.equals(destination, box.destination) &&
-        Objects.equals(shippingCost, box.shippingCost);
+        return Objects.equals(id, box.id) && Objects.equals(receiverName, box.receiverName)
+                && Objects.equals(weight, box.weight) && Objects.equals(color, box.color)
+                && Objects.equals(destination, box.destination) && Objects.equals(shippingCost, box.shippingCost);
     }
 
     @Override
@@ -98,12 +105,7 @@ public class Box {
 
     @Override
     public String toString() {
-        return "User{"+
-        "id=" + id +
-        ", receiverName=" + receiverName +
-        ", weight=" + weight +
-        ", color=" + color + 
-        ", destination=" + destination + 
-        ", shippingCost=" + shippingCost + "}";
+        return "User{" + "id=" + id + ", receiverName=" + receiverName + ", weight=" + weight + ", color=" + color
+                + ", destination=" + destination + ", shippingCost=" + shippingCost + "}";
     }
 }

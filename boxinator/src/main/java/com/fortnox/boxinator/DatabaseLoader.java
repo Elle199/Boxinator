@@ -11,20 +11,20 @@ import org.springframework.stereotype.Component;
  * @author max.angman
  */
 
- //Used to pre-fill database with data
+// Used to pre-fill database with data
 @Component
-public class DatabaseLoader implements CommandLineRunner { 
-    
-    //Local instance of respository
-    private final BoxRepository boxRepository;
+public class DatabaseLoader implements CommandLineRunner {
 
-    //Register the new repository
-    @Autowired
+	// Local instance of respository
+	private final BoxRepository boxRepository;
+
+	// Register the new repository
+	@Autowired
 	public DatabaseLoader(BoxRepository boxRepository) {
 		this.boxRepository = boxRepository;
 	}
 
-    //Fills the database with a new box
+	// Fills the database with a new box
 	@Override
 	public void run(String... strings) throws Exception {
 		this.boxRepository.save(new Box("Kalle", 5, "(255, 0, 255)", "China", 20l));

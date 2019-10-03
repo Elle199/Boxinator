@@ -10,5 +10,5 @@ import org.springframework.data.repository.CrudRepository;
 
 //Local repository of Database, CrudRepository<modelObject, indexType>
 public interface BoxRepository extends CrudRepository<Box, Long> {
-
+    
 }

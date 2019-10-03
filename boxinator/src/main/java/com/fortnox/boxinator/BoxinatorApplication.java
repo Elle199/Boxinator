@@ -7,9 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author max.angman
  */
 
- @SpringBootApplication
- public class BoxinatorApplication {
-     public static void main(String[] args) {
-         SpringApplication.run(BoxinatorApplication.class, args);
-     }
- }
+@SpringBootApplication
+public class BoxinatorApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(BoxinatorApplication.class, args);
+    }
+}
