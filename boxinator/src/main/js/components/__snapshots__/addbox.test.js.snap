@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create new box should do something 1`] = `
+<div
+  className="main"
+>
+  <div
+    className="formController"
+  >
+    <form>
+      <div
+        className="inputBox"
+      >
+        <label
+          htmlFor="receiverName"
+        >
+          Reciver name
+        </label>
+        <input
+          required={true}
+          type="text"
+        />
+        <p
+          className="inputWarning"
+        >
+          Error
+        </p>
+      </div>
+      <div
+        className="inputBox"
+      >
+        <label
+          htmlFor="weight"
+        >
+          Weight
+        </label>
+        <input
+          min="0"
+          pattern="[0-9]+"
+          required={true}
+          title="Must the only whole numbers"
+          type="text"
+        />
+        <p
+          className="inputWarning"
+        >
+          Error
+        </p>
+      </div>
+      <div
+        className="inputBox"
+      >
+        <label
+          htmlFor="color"
+        >
+          Color
+        </label>
+        <input
+          required={true}
+          type="color"
+        />
+        <p
+          className="inputWarning"
+        >
+          Error
+        </p>
+      </div>
+      <div
+        className="inputBox"
+      >
+        <label
+          htmlFor="rdestination"
+        >
+          Destination
+        </label>
+        <select>
+          <option>
+            Sweden
+          </option>
+          <option>
+            China
+          </option>
+          <option>
+            Brazil
+          </option>
+          <option>
+            Austria
+          </option>
+        </select>
+      </div>
+      <input
+        className="noDisplay"
+        type="text"
+      />
+      <input
+        onClick={[Function]}
+        type="submit"
+        value="Save"
+      />
+    </form>
+  </div>
+</div>
+`;

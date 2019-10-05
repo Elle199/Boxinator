@@ -17,7 +17,6 @@ class BoxList extends React.Component {
 
 			this.setState({ attributes: Object.keys(response.entity._embedded.boxes[0]) });
 			this.state.attributes.pop();
-			console.log(this.state.attributes);
 		});
 	}
 
