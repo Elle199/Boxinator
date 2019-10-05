@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+// Only actual backend test.
 @RunWith(SpringRunner.class)
 @DataJpaTest
 public class BoxRepositoryTest {
