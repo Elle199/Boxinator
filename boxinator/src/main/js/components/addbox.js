@@ -2,10 +2,6 @@
  * @author max.angman
  */
 
-/*
-import RouteLinks from '../components/routes';
-*/
-
 const React = require('react');
 const ReactDOM = require('react-dom');
 const client = require('../client');
@@ -130,20 +126,26 @@ class CreateBox extends React.Component {
     }
 
     onCreate(newBox){
+        // Format color in Hex to be in RGB
         let r,g,b;
         r = parseInt(newBox.color.substring(1,3), 16);
         g = parseInt(newBox.color.substring(3,5), 16);
         b = parseInt(newBox.color.substring(5,7), 16);
 
+        // Update box color value to be RGB instead of Hex
         const newColor = "(" + r + ", " + g + ", " + b + ")";
         newBox.color = newColor;
         
+        // Send POST request to add to Db
         client({
                 method: 'POST',
                 path: "/api/boxes",
                 entity: newBox,
                 headers: { 'Content-Type': 'application/json' }
         }).done(response => {
+            // Update which view the user sees
+
+            // TODO: Add validation to POST request
             window.location = "#/listboxes";
         });
         
