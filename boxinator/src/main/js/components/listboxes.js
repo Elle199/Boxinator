@@ -54,7 +54,6 @@ class Box extends React.Component {
 	}
 
 	deciToHex(color) {
-		let r, g, b;
 		color = color.replace(/[\(\)]/g, "");
 
 		let splitColors = color.split(',');
@@ -82,4 +81,7 @@ class Box extends React.Component {
 	}
 }
 
-export default BoxList
+export {
+	BoxList,
+	Box
+};

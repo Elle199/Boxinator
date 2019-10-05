@@ -1,6 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BoxList should render correctly in "debug" mode 1`] = `
+exports[`Box should create a box single row 1`] = `
+<tr>
+  <td>
+    Max
+  </td>
+  <td>
+    50 kg
+  </td>
+  <td>
+    <input
+      disabled={true}
+      type="color"
+      value="#ffff64"
+    />
+  </td>
+  <td>
+    Sweden
+  </td>
+  <td>
+    65 SEK
+  </td>
+</tr>
+`;
+
+exports[`BoxList should create empty table 1`] = `
 <div
   className="displayTable"
 >
