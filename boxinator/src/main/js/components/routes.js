@@ -5,7 +5,7 @@
 import CreateBox from '../components/addbox';
 import NotFound from './notfound';
 import { Route, NavLink, Link, HashRouter as Router, Switch } from 'react-router-dom';
-import BoxList from './listboxes';
+import { BoxList } from './listboxes';
 
 const React = require('react');
 

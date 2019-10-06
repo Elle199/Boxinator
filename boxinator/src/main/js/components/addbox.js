@@ -12,6 +12,7 @@ class CreateBox extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.onCreate = this.onCreate.bind(this);
         this.state = {attributes: [] };
+        this.validateInputs = this.validateInputs.bind(this);
     }
 
     componentDidMount() {

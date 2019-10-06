@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Create new box should do something 1`] = `
+exports[`Create new box view should match snapshot 1`] = `
 <div
   className="main"
 >
